@@ -1,6 +1,7 @@
-#Welcome to the TIC-TAC-TOE game!
+# Welcome to the TIC-TAC-TOE game!
 
 board = [' ' for x in range(10)]
+
 
 def display_board(board):
     """
@@ -19,8 +20,15 @@ def display_board(board):
     print('      |     |')
 
 
+def player_move(letter, position):
+    board[position] = letter
+
+def available_space(position):
+    retrun board[position] == ' '
+
 def main():
     print('Welcome to the TIC-TAC-TOE game!')
     display_board(board)
+
 
 main()
