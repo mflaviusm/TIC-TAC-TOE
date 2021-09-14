@@ -18,4 +18,9 @@ def display_board(board):
     print('   ' + board[7] + '  |  ' + board[8] + '  |  ' + board[9])
     print('      |     |')
 
-display_board(board)
+
+def main():
+    print('Welcome to the TIC-TAC-TOE game!')
+    display_board(board)
+
+main()
