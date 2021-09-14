@@ -20,15 +20,22 @@ def display_board(board):
     print('      |     |')
 
 
-def player_move(letter, position):
+def check_move(letter, position):
     board[position] = letter
 
-def available_space(position):
-    retrun board[position] == ' '
 
+def available_space(position):
+    return board[position] == ' '
+
+
+def player_move():
+    correct = True
+    while correct:
+        move = input('Please select a number ranging from 1 to 9 to place the \'X\':\n')
+       
 def main():
     print('Welcome to the TIC-TAC-TOE game!')
     display_board(board)
-
+    player_move()
 
 main()
