@@ -32,10 +32,24 @@ def player_move():
     correct = True
     while correct:
         move = input('Please select a number ranging from 1 to 9 to place the \'X\':\n')
-       
+        try:
+            move = int(move)
+            if move > 0 and move < 10:
+                if available_space(move):
+                    correct = False
+                    check_move('X', move)
+                else:
+                    print('Space was already taken, try another space!')
+            else:
+                print('Please select a number bewtween 1 and 9!')
+        except:
+            print('Please type a number!')
+
+
 def main():
     print('Welcome to the TIC-TAC-TOE game!')
     display_board(board)
     player_move()
+
 
 main()
