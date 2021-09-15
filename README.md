@@ -6,7 +6,7 @@ TIC-TAC-TOE is as the name suggests, a tic tac toe game where the user plays aga
 
 TIC-TAC-TOE was created for my Milestone Project 3 in the Full Stack Web Development course I am currently undertaking at Code Institute.
 
-![](readme-images/amiresponsive.tic.tac.toe.png)
+![](readme-images/am.i.responsive.tic.tac.toe.png)
 
 [Live website link](https://tic-tac-toe-ms3.herokuapp.com/)
 
@@ -48,3 +48,36 @@ The board is diplayed using a display_board function consisting of print stateme
 The player move is registered using a player_move function and validated using two auxiliary functions: a check_move function and available_space function that validate the users input and check to see if chosen space is available.
 The computer function looks checks to see what space the player has taken, looks into posible choices that would help it win the game and then makes its choice.
 The winning combinations function uses a return statement to check for possible winning combinations and if any of them have been met.
+
+# Testing
+
+## Solved Bugs
+    * When the game was a tie, the user would get a duplicate tie game mesage, which was being caused by a duplicate print function, which was removed.
+    * When the user was promt with the choice to play another game or quit, if the user would input 'yes', the game would crash. The issue was being caused due to missing paranthesis on the user_reply.lower function call.
+
+## Remaining Bugs
+    * No remaining bugs
+
+## Validator testing
+    * PEP8 was used to check the code. The only errors returned are 3 lines that go over 79 characters. The code was not changed in order to maintain functionality.
+![](readme-images/pep8.png)
+
+# Deployment
+This project was deployed using Code Institute's mock terminal for Heroku.
+
+## Deployment steps
+* Fork or clone the repository
+* Create a new Heroku App
+* Create 2 buildbacks in the settings tab of the app:
+    * 1st will be to Python
+    * 2nd will be to NodeJS
+    * Please bear in mind tha the order of the buildbacks is extremely important, so add them in the provided order
+* Link the Heorku App to the GitHub repository. This can be done from the deployment tab of the app
+* Click the deploy button at the bottom of the deploy tab of the app
+
+# Acknowledgements
+ To my mentor Rahul for providing invaluable advice and support.
+
+ Code Institute for their support.
+
+ Slack community members for offering advice and feedback.
