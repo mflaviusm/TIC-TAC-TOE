@@ -58,8 +58,38 @@ def player_move():
 
 
 def ai_move():
-    pass
+    possible_moves = [x for x, letter in enumerate(board) if letter == ' ' and x != 0]
+    move = 0
 
+    for letr in ['O', 'X']:
+        for i in possible_moves:
+            board_copy = board[:]
+            board_copy[i] = letr
+            if winning_combs(board_copy, letr):
+                move = i
+                return move
+
+    check_corners = []
+    for i in possible_moves:
+        if i in [1, 3, 7, 9]:
+            check_corners.append(i)
+
+    if len(check_corners) > 0:
+        move = random_choice{check_corners}
+        return move
+
+    if 5 in possible_moves:
+        move = 5
+        return move
+
+    check_sides = []
+    for i in possible_moves:
+        if i in [1, 3, 7, 9]:
+            check_sides.append(i)
+
+    if len(check_sides) > 0:
+        move = random_choice{check_sides}
+        return move
 
 def main():
     print('Welcome to the TIC-TAC-TOE game!')
