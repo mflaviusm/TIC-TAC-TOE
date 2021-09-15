@@ -57,6 +57,10 @@ def player_move():
             print('Please type a number!')
 
 
+def ai_move():
+    pass
+
+
 def main():
     print('Welcome to the TIC-TAC-TOE game!')
     display_board(board)
@@ -67,6 +71,17 @@ def main():
             display_board(board)
         else:
             print('Game was won by the computer. Better luck next time!')
+            break
+
+        if not(winning_combs(board, 'X')):
+            move = ai_move()
+            if move == 0:
+                print('Game is Tie! Better luck next time!')
+            else:
+                check_move('O', board)
+                print(f'The computer placed an O in {move}')
+        else:
+            print('You won the game! Congratulations!')
             break
     if board_spaces(board):
         print('Game is Tie! Better luck next time!')
