@@ -28,16 +28,20 @@ def available_space(position):
     return board[position] == ' '
 
 
+def winning_combs(brd, let):
+    return (bo[7] == le and bo[8] == le and bo[9] == le) or (bo[4] == le and bo[5] == le and bo[6] == le) or(bo[1] == le and bo[2] == le and bo[3] == le) or(bo[1] == le and bo[4] == le and bo[7] == le) or(bo[2] == le and bo[5] == le and bo[8] == le) or(bo[3] == le and bo[6] == le and bo[9] == le) or(bo[1] == le and bo[5] == le and bo[9] == le) or(bo[3] == le and bo[5] == le and bo[7] == le)
+
+
 def player_move():
-    correct = True
-    while correct:
-        move = input('Please select a number ranging from 1 to 9 to place the \'X\':\n')
+    execute = True
+    while execute:
+        user_input = input('Please select a number ranging from 1 to 9 to place the \'X\':\n')
         try:
-            move = int(move)
-            if move > 0 and move < 10:
-                if available_space(move):
-                    correct = False
-                    check_move('X', move)
+            user_input = int(user_input)
+            if user_input >= 1 and user_input <= 9:
+                if available_space(user_input):
+                    execute = False
+                    check_move('X', user_input)
                 else:
                     print('Space was already taken, try another space!')
             else:
@@ -49,7 +53,8 @@ def player_move():
 def main():
     print('Welcome to the TIC-TAC-TOE game!')
     display_board(board)
-    player_move()
+    
+    
 
 
 main()
