@@ -3,6 +3,14 @@
 board = [' ' for x in range(10)]
 
 
+def check_move(letter, position):
+    board[position] = letter
+
+
+def available_space(position):
+    return board[position] == ' '
+
+
 def display_board(board):
     """
     Displays the board in a more styles manner
@@ -18,14 +26,6 @@ def display_board(board):
     print('      |     |')
     print('   ' + board[7] + '  |  ' + board[8] + '  |  ' + board[9])
     print('      |     |')
-
-
-def check_move(letter, position):
-    board[position] = letter
-
-
-def available_space(position):
-    return board[position] == ' '
 
 
 def winning_combs(brd, let):
@@ -91,12 +91,13 @@ def ai_move():
 
     check_sides = []
     for i in possible_moves:
-        if i in [1, 3, 7, 9]:
+        if i in [2, 4, 6, 8]:
             check_sides.append(i)
 
     if len(check_sides) > 0:
         move = random_choice(check_sides)
-        return move
+
+    return move
 
 
 def main():
@@ -122,8 +123,6 @@ def main():
         else:
             print('You won the game! Congratulations!')
             break
-    if board_spaces(board):
-        print('Game is Tie! Better luck next time!')
 
 
 main()
