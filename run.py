@@ -29,7 +29,7 @@ def available_space(position):
 
 
 def winning_combs(brd, let):
-    return (bo[7] == le and bo[8] == le and bo[9] == le) or (bo[4] == le and bo[5] == le and bo[6] == le) or(bo[1] == le and bo[2] == le and bo[3] == le) or(bo[1] == le and bo[4] == le and bo[7] == le) or(bo[2] == le and bo[5] == le and bo[8] == le) or(bo[3] == le and bo[6] == le and bo[9] == le) or(bo[1] == le and bo[5] == le and bo[9] == le) or(bo[3] == le and bo[5] == le and bo[7] == le)
+    return (brd[7] == let and brd[8] == let and brd[9] == let) or (brd[4] == let and brd[5] == let and brd[6] == let) or (brd[1] == let and brd[2] == let and brd[3] == let) or (brd[1] == let and brd[4] == let and brd[7] == let) or (brd[2] == let and brd[5] == let and brd[8] == let) or (brd[3] == let and brd[6] == let and brd[9] == let) or (brd[1] == let and brd[5] == let and brd[9] == let) or (brd[3] == let and brd[5] == let and brd[7] == let)
 
 
 def board_spaces(board):
@@ -60,8 +60,16 @@ def player_move():
 def main():
     print('Welcome to the TIC-TAC-TOE game!')
     display_board(board)
-    
 
+    while not(board_spaces(board)):
+        if not(winning_combs(board, 'O')):
+            player_move()
+            display_board(board)
+        else:
+            print('Game was won by the computer. Better luck next time!')
+            break
+    if board_spaces(board):
+        print('Game is Tie! Better luck next time!')
 
 
 main()
