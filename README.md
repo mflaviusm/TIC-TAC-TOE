@@ -40,3 +40,11 @@ First to reach 3 X's or O's wins, otherwise the game is a tie.
 2. Introduce high score feature.
 3. Introduce win streak tracking feature.
 4. Introduce player vs player feature.
+
+# Data Model
+
+The game uses a board list. The list is made out a for loop to iterate through the list items.
+The board is diplayed using a display_board function consisting of print statements.
+The player move is registered using a player_move function and validated using two auxiliary functions: a check_move function and available_space function that validate the users input and check to see if chosen space is available.
+The computer function looks checks to see what space the player has taken, looks into posible choices that would help it win the game and then makes its choice.
+The winning combinations function uses a return statement to check for possible winning combinations and if any of them have been met.
