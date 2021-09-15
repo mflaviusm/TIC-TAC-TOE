@@ -129,7 +129,7 @@ main()
 
 while True:
     user_reply = input('Would you like to have another go? (Y/N):\n')
-    if user_reply.lower() == 'y' or user_reply.lower == 'yes':
+    if user_reply.lower() == 'y' or user_reply.lower() == 'yes':
         board = [' ' for x in range(10)]
         print('----------------------------------------------------')
         main()
