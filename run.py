@@ -34,9 +34,9 @@ def winning_combs(brd, let):
 
 def board_spaces(board):
     if board.count(' ') > 1:
-        return True
-    else:
         return False
+    else:
+        return True
 
 
 def player_move():
@@ -57,6 +57,13 @@ def player_move():
             print('Please type a number!')
 
 
+def random_choice(list):
+    import random
+    length = len(list)
+    range = random.randrange(0, length)
+    return list[range]
+
+
 def ai_move():
     possible_moves = [x for x, letter in enumerate(board) if letter == ' ' and x != 0]
     move = 0
@@ -75,7 +82,7 @@ def ai_move():
             check_corners.append(i)
 
     if len(check_corners) > 0:
-        move = random_choice{check_corners}
+        move = random_choice(check_corners)
         return move
 
     if 5 in possible_moves:
@@ -88,8 +95,9 @@ def ai_move():
             check_sides.append(i)
 
     if len(check_sides) > 0:
-        move = random_choice{check_sides}
+        move = random_choice(check_sides)
         return move
+
 
 def main():
     print('Welcome to the TIC-TAC-TOE game!')
@@ -108,8 +116,9 @@ def main():
             if move == 0:
                 print('Game is Tie! Better luck next time!')
             else:
-                check_move('O', board)
+                check_move('O', move)
                 print(f'The computer placed an O in {move}')
+                display_board(board)
         else:
             print('You won the game! Congratulations!')
             break
